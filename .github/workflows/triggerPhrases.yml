@@ -10,7 +10,7 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     if: |
-      startsWith(github.event.comment.body, '/assign me') ||
+      startsWith(github.event.comment.body, '/assignme') ||
       startsWith(github.event.comment.body, '/assign me')
     steps:
     
