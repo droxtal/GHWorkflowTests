@@ -7,8 +7,7 @@ on:
 jobs:
 
   assign-commentor:
-    permissions:
-      issues: write
+    permissions: write-all
     runs-on: ubuntu-latest
     if: |
       startsWith(github.event.comment.body, '/assign me') ||
