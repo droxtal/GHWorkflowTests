@@ -7,17 +7,13 @@ on:
 jobs:
 
   assign-commentor:
-    permissions: write-all
     runs-on: ubuntu-latest
     if: |
       startsWith(github.event.comment.body, '/assignme') ||
       startsWith(github.event.comment.body, '/assign me')
+
     steps:
     
-      - name: Print URL
-        run: |
-          echo https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/assignee -d '{"assignees":["${{ github.comment.user.login }}"]}'
-          
       - name: Assigning to commenter
         run: |
           curl \
