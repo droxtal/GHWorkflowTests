@@ -13,6 +13,11 @@ jobs:
       startsWith(github.event.comment.body, '/assign me') ||
       startsWith(github.event.comment.body, '/assign me')
     steps:
+    
+      - name: Print URL
+        run: |
+          echo https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/assignee
+          
       - name: Assigning to commenter
         run: |
           curl \
