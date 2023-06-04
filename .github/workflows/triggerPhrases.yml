@@ -16,7 +16,7 @@ jobs:
     
       - name: Print URL
         run: |
-          echo https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/assignee
+          echo https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/assignee -d '{"assignees":["${{ github.comment.user.login }}"]}'
           
       - name: Assigning to commenter
         run: |
